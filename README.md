@@ -78,12 +78,21 @@ src/
 
 ## Local Development
 
+# Credentials
+First, create a `.env` file in the root directory and add your keys for the following variables:
+- `ENV`
+- `COHERE_API_KEY`
+- `OPENAI_API_KEY`
+- `ANTHROPIC_API_KEY`
+- `EXA_API_KEY`
+
+
 ```sh
 # Start Inngest dev server
 npx inngest-cli@latest dev -u http://localhost:8000/api/inngest --no-discovery
 
 # Start service
-uvicorn app:app --reload
+cd src && uvicorn app:app --reload
 ```
 
 ## Docker Deployment
@@ -96,15 +105,6 @@ nixpacks build . -t deep-research-app
 docker-compose up
 ```
 
-## Environment Setup
-
-Required environment variables (see `.env.example`):
-- `ENV`: Environment (dev/prod)
-- `COHERE_API_KEY`: Cohere API key
-- `OPENAI_API_KEY`: OpenAI API key
-- `ANTHROPIC_API_KEY`: Anthropic API key
-- `EXA_API_KEY`: Exa API key
-
 ## Project Requirements
 
 - Python 3.11+
@@ -112,6 +112,9 @@ Required environment variables (see `.env.example`):
 - Node.js (for Inngest CLI)
 
 ## Entry point from inngest CLI: 
+
+Navigate to localhost:8288 and you will find all of the available inngest events
+
 Run the initialize-research inngest event with a json compatable with ReportRequest, for example:
 
 ```json
@@ -122,3 +125,5 @@ Run the initialize-research inngest event with a json compatable with ReportRequ
     "report_type": None
 }
 ```
+
+This will kick off the research pipeline, and eventually output a report 
