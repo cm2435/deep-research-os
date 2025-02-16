@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     ANTHROPIC_API_KEY: str = "na"
     EXA_API_KEY: str = "na"
     COHERE_API_KEY: str = "na"
-    
+
     class Config:
         env_file = Path(__file__).resolve().parents[1] / ".env"
 

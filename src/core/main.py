@@ -7,6 +7,7 @@ from core.logger import get_logger
 
 logger = get_logger("core.main")
 
+
 @INNGEST_CLIENT.create_function(
     fn_id="initialize-research",
     trigger=inngest.TriggerEvent(event="app/case/initialize-research.requested"),
