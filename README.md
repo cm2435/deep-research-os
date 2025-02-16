@@ -2,6 +2,7 @@
 
 OpenAI's deep research tool is very good at what it does, but opensource is always better! Confurable plug and play research loops you can use to surface information in a auditable way.
 
+
 ## Core Features
 
 - Autonomous research planning and execution
@@ -11,6 +12,9 @@ OpenAI's deep research tool is very good at what it does, but opensource is alwa
 - Comprehensive market analysis and synthesis
 
 ## Project Structure
+
+![Core Research Flow](img/core-flow.png)
+
 
 ```
 src/
