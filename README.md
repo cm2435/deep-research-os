@@ -32,24 +32,44 @@ src/
 
 ### Core Components
 
-1. **Research Planner** (`search_planner/`)
-   - Takes in the current research state, the user query, and plans what information to try gather from the open web
+## 1. Task Planner (`search_planner/`)
 
-2. **Research Executor** (`research/`)
-   - Executes web searches, parses results and reranks for relevance
-   - Processes and does QA over the sub-queries with the results.
+The Task Planner serves as a multi-step reasoning engine that:
+- Analyzes the user query and previous research outputs
+- Breaks down complex queries into core investigative questions
+- Identifies key information gaps and background context needed
+- Generates a structured set of research questions for the next cycle
 
-3. **Research Evaluator** (`evaluation/`)
-   - Takes in the current research state, the user query, and reasons if further research is needed before generating a report.
+## 2. Question Answering Workflow (`research/`)
 
-4. **Report Generator** (`report_generator/`)
-   - Takes in the current research state, the user query, and generates a report.
-   - Reports can be any of the following formats:
-    -  Decision support document
-    -  Market intelligence report
-    -  Competitive analysis
-    -  Technical deep dive
-    - General information dossier
+A parallel execution pipeline that:
+- Performs targeted web scraping to gather relevant context
+- Uses advanced reranking to ensure granular result relevance 
+- Generates detailed question-answer pairs with source attribution and dates
+- Returns structured research outputs with full citation tracking
+
+## 3. Research Evaluator (`evaluation/`)
+
+Quality assurance system responsible for:
+- Analyzing research completeness
+- Identifying potential gaps or ambiguities in gathered information
+- Evaluating if additional research cycles would meaningfully improve results
+- Making data-driven decisions about research continuation
+- Ensuring comprehensive coverage of the user's query intent
+
+## 4. Report Generator (`report_generator/`)
+
+Intelligent report generation system featuring:
+- Format selection based on research content and query type
+- Dynamic template population with research findings
+- Clear linkage between conclusions and source materials
+
+### Supported Output Formats:
+- Decision support document
+- Market intelligence report
+- Competitive analysis
+- Technical deep dive
+- General information dossier
 
 ## Technology Stack
 
