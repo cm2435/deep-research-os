@@ -62,12 +62,10 @@ The combined effect of Japan's aging population and monetary policy has created 
 ---
 
 ### Sources
-[1] Research Paper (2022) - research_paper  
+[1] World Bank (2022)  
 [2] Nunn (2022) - https://elischolar.library.yale.edu/journal-of-financial-crises/vol4/iss2/75  
 [3] Kiminami et al. (2023) - https://doi.org/10.1007/s41685-023-00282-x  
 [4] Shinzo Abe (2018) - https://nkd.a.com/japan-business-economy-2024  
 [5] Bank of Japan (2024) - https://www.boj.or.jp/en/research/finance/financial_system_report.htm/  
 
 *Note: Analysis based on research from 2016-2024, including data from the Bank of Japan, academic research papers, and financial sector reports.*
-
-Let me know if you'd like me to make any other adjustments to the formatting or content!
