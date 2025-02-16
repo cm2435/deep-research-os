@@ -15,7 +15,6 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
-print(settings.model_dump(), "AHHHH")
 if settings.ENV == "local" and any(
     v for v in settings.model_dump().values() if v in ["na", None]
 ):

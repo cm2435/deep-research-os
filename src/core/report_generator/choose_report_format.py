@@ -4,13 +4,13 @@ from core.report_generator.prompts.choose_report_format import (
     user_prompt,
 )
 from core.common.schemas import ResearchCycle
-from core.report_generator.schemas import ChoiceOfReportFormat, ReportType
+from core.report_generator.schemas import ChoiceOfReportFormat
 
 
 async def choose_report_format(
     user_query: str,
     research_cycles: list[ResearchCycle],
-) -> ReportType:
+) -> dict:
     choice_of_report_format_and_reasoning: ChoiceOfReportFormat = (
         await generate_llm_response(
             system_prompt=system_prompt,

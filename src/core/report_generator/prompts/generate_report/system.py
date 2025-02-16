@@ -14,6 +14,32 @@ Before generating the report:
 
 The goal is to provide a clear, thorough, and coherent response to the user query, ensuring the user is comprehensively informed about the answers and perspectives related to their query, with proper attribution for facts and data.
 
+# Report Length Guidelines
+For any non-trivial query (complex topics, multi-faceted questions, or subjects requiring deep analysis):
+1. Aim for substantial depth with reports exceeding 1000 words (approximately 2-4 pages)
+2. Include comprehensive sections covering:
+   - Detailed background and context
+   - In-depth analysis of each major aspect
+   - Extended discussion of implications
+   - Thorough examination of different perspectives
+   - Detailed supporting evidence and examples
+   - Nuanced exploration of limitations and caveats
+3. Provide extensive supporting detail through:
+   - Multiple relevant examples
+   - Detailed explanations of complex concepts
+   - Extended analysis of relationships between different aspects
+   - Comprehensive discussion of implications
+   - Thorough exploration of counter-arguments or alternative viewpoints
+
+Consider a report too brief if it:
+- Oversimplifies complex topics
+- Omits important nuances or caveats
+- Lacks detailed supporting evidence
+- Skips over important context
+- Fails to explore implications fully
+
+Simple, factual queries may still receive shorter, focused responses as appropriate.
+
 # Input data
 A JSON object containing the following fields:
 - user_query: The user's query string.
@@ -22,7 +48,6 @@ A JSON object containing the following fields:
   - findings: A summary of the findings from the research cycle.
   - sources: List of sources consulted in this cycle.
   - limitations: Any limitations or caveats specific to this cycle.
-- report_format: The format in which the report should be generated (e.g., "GeneralInformationReport").
 
 # Output
 A Pydantic BaseModel object containing the following fields:
@@ -31,10 +56,12 @@ A Pydantic BaseModel object containing the following fields:
   - How the structure addresses the user query
   - Resolution of any conflicting information from research cycles
   - Identification of any gaps in the research that may affect the completeness of the answer
+  - Explanation of report length decisions based on query complexity
 - report: The generated report in the specified format (e.g., GeneralInformationReport), including inline citations.
 
 # Inline Citations
 - Use square brackets with numbers for inline citations, e.g., [1], [2], etc.
+- The source of the citation should be verbatim lifted from the source at the end of a question answer pair
 - Place the citation immediately after the relevant fact or piece of information.
 - Ensure that key factual statements or data points are accompanied by a citation.
 
@@ -47,9 +74,11 @@ Before finalizing the report:
 2. Check for coherence: Verify that the report flows logically and presents a unified narrative.
 3. Confirm relevance: Ensure all included information directly relates to the user query.
 4. Verify citations: Check that key factual statements have appropriate inline citations.
+5. Assess depth: Confirm that complex topics receive appropriately detailed treatment.
 
 # Output Constraints
 - The reasoning section should be between 150-300 words.
+- For non-trivial queries, reports should exceed 1000 words with comprehensive coverage.
 - The report should adhere to the structure of the specified Pydantic BaseModel (e.g., GeneralInformationReport).
 
 # Example Output Structure

@@ -3,6 +3,7 @@ import inngest
 from core.report_generator.schemas import ReportRequest, ChoiceOfReportFormat
 from core.report_generator.choose_report_format import choose_report_format
 from core.report_generator.generate_report import fill_report_template
+from typing import cast
 
 
 @INNGEST_CLIENT.create_function(
@@ -32,4 +33,4 @@ async def generate_report(
         data=payload.model_dump(),
     )
 
-    return report
+    return cast(dict, report)

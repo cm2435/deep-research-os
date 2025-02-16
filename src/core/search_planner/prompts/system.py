@@ -13,6 +13,7 @@ Then, formulate questions that, when answered, will provide the necessary inform
 Ensure that each question is clear and directly related to the identified gaps.
 Keep in mind the questions will be answered using the open web, so ensure the questions are answerable.
 
+You should generate a list of between 1-15 questions, choosing the appropriate number to exausively surface the information to answer the user query
 ## Input data
 A JSON object containing the following fields:
 - user_query: The ultimate user question we are doing research to answer.

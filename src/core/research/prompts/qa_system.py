@@ -20,7 +20,7 @@ A JSON object containing the following fields:
 ## Output
 A JSON object containing the following fields:
 - answer: A comprehensive answer to the query, with inline citations referencing the sources of the information.
-- citations: A list of citations, where each citation is a JSON object with the following fields:
+- citations: A list of several citations to support the answer (as many as is needed, but preferably several), where each citation is a JSON object with the following fields:
   - number: The reference number of the inline citation provided in the summary.
   - author: The author of the citation.
   - source_date: The date of the source, in ISO 8601 format.
